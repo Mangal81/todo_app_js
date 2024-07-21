@@ -1,5 +1,10 @@
 let todoData = []; //create an empty array to store todo data in local storage
 
+let displayData = document.querySelector(".display-data");
+let todoTable = document.querySelector(".todos");
+displayData.setAttribute("style", "display:none;");
+
+
 // function will run on loading of document
 window.onload = () => {
 	let retriveData = localStorage.getItem("todoData");
@@ -9,9 +14,21 @@ window.onload = () => {
 		// there is no any object named "todoData"
 		localStorage.setItem("todoData", todoData);
 		console.log("item stored successfully");
-	} 
-	
-	else console.log("already present");
+		//console.error("No data availble")
+		displayData.setAttribute("style", "display:block;")
+	}
+
+	else {
+		try {
+			let data = JSON.parse(retriveData);
+			console.log(data);
+			fetchValue();
+		}
+		catch (e) {
+			console.error("No data availble (window.onload function)", e);
+			displayData.setAttribute("style", "display:block;")
+		}
+	}
 };
 
 //function to store data in localstorage
@@ -38,7 +55,16 @@ function submitValue() {
 		title.value = "";
 		description.value = "";
 
+		const newRow =
+			`<tr>
+                <td>${data.title}</td>
+                <td>${data.description}</td>
+            </tr>`;
+		todoTable.insertAdjacentHTML('beforeend', newRow);
+
 		console.log("it was empty and now it has items");
+
+		displayData.setAttribute("style", "display:none;")
 	} else {
 		// if it has any value
 		let dataStored = JSON.parse(retriveData);
@@ -49,6 +75,13 @@ function submitValue() {
 		title.value = "";
 		description.value = "";
 
+		const newRow =
+			`<tr>
+				<td>${data.title}</td>
+				<td>${data.description}</td>
+			</tr>`;
+		todoTable.insertAdjacentHTML('beforeend', newRow);
+
 		console.log("in else condition ", typeof dataStored);
 	}
 }
@@ -58,9 +91,17 @@ function fetchValue() {
 	let retriveData = localStorage.getItem("todoData");
 	try {
 		let data = JSON.parse(retriveData);
-		console.log(data);
-	} 
+		for (let i in data) {
+			console.log(data[i].title, data[i].description);
+			const newRow =
+				`<tr>
+                    <td>${data[i].title}</td>
+                    <td>${data[i].description}</td>
+                </tr>`;
+			todoTable.insertAdjacentHTML('beforeend', newRow);
+		}
+	}
 	catch (e) {
-		console.log("no data availble");
+		console.log("no data availble", e);
 	}
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/Images/favicon1.png" type="image/x-icon">
 </head>
 
 <body>
@@ -16,7 +17,20 @@
                 <input type="text" name="title" placeholder="Title" id="title" />
                 <input type="text" id="description" placeholder="Description" />
                 <button onclick="submitValue()">Submit</button>
-                <button onclick="fetchValue()">Ftech</button>
+                <!-- <button onclick="fetchValue()">Ftech</button> -->
+            </div>
+            <div class="todo todoList">
+                <div><p class="heading todoList-heading">Your Todos</p></div>
+                
+                <div>
+                    <table class="todos">
+                        <thead><tr><th>Title</th> <th>Description</th></tr></thead>
+                    </table>
+                </div>
+                <div class="display-data">
+                    <h2 style="color: red;">No data Availble</h2>
+                </div>
+                
             </div>
         </div>
     </div>
