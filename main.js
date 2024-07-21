@@ -9,7 +9,9 @@ window.onload = () => {
 		// there is no any object named "todoData"
 		localStorage.setItem("todoData", todoData);
 		console.log("item stored successfully");
-	} else console.log("already present");
+	} 
+	
+	else console.log("already present");
 };
 
 //function to store data in localstorage
@@ -57,7 +59,8 @@ function fetchValue() {
 	try {
 		let data = JSON.parse(retriveData);
 		console.log(data);
-	} catch (e) {
+	} 
+	catch (e) {
 		console.log("no data availble");
 	}
 }
