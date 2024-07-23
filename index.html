@@ -11,31 +11,36 @@
 
 <body>
     <div class="container">
-        <img src="/Images/background2.jpg" class="background">
-
         <div class="main">
-            
-            <div class="todo">
-                <p class="heading">Create a Todo</p>
-                <input type="text" name="title" placeholder="Title" id="title" />
-                <input type="text" id="description" placeholder="Description" />
-                <button class="button" onclick="submitValue()">Submit</button>
-                <!-- <button onclick="fetchValue()">Ftech</button> -->
+            <div class="left">
+                <form id="form">
+                    <label for="text">
+                        <h2>Create Your Todo</h2>
+                    </label>
+                    <br>
+                    <textarea name="text" id="input" cols="40" rows="7" placeholder="Type here..."></textarea>
+                    <br><br>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
-            <div class="todo todoList">
-                <div><p class="heading todoList-heading">Your Todos</p></div>
-                
-                <div>
-                    <table class="todos">
-                        <thead><tr><th>Sr. No.</th><th>Title</th> <th>Description</th><th>Action</th></tr></thead>
-
-                        <tfoot><tr><td colspan="4"> <button class="button delete-button" id="clear-All">Clear All</button></td></tr></tfoot>
-                    </table>
+            <div class="right">
+                <h2>Your Todos are here</h2>
+                <div id="posts">
+                    <div>
+                        <p>First Post</p>
+                        <span class="options">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </span>
+                    </div>
+                    <div>
+                        <p>First Post</p>
+                        <span class="options">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </span>
+                    </div>
                 </div>
-                <div class="display-data">
-                    <h2 style="color: red;">No data Availble</h2>
-                </div>
-                
             </div>
         </div>
     </div>
