@@ -11,12 +11,15 @@
 
 <body>
     <div class="container">
+        <img src="/Images/background2.jpg" class="background">
+
         <div class="main">
+            
             <div class="todo">
                 <p class="heading">Create a Todo</p>
                 <input type="text" name="title" placeholder="Title" id="title" />
                 <input type="text" id="description" placeholder="Description" />
-                <button onclick="submitValue()">Submit</button>
+                <button class="button" onclick="submitValue()">Submit</button>
                 <!-- <button onclick="fetchValue()">Ftech</button> -->
             </div>
             <div class="todo todoList">
@@ -24,7 +27,9 @@
                 
                 <div>
                     <table class="todos">
-                        <thead><tr><th>Title</th> <th>Description</th></tr></thead>
+                        <thead><tr><th>Sr. No.</th><th>Title</th> <th>Description</th><th>Action</th></tr></thead>
+
+                        <tfoot><tr><td colspan="4"> <button class="button delete-button" id="clear-All">Clear All</button></td></tr></tfoot>
                     </table>
                 </div>
                 <div class="display-data">
