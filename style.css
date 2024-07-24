@@ -3,6 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: white;
 }
 .container{
 	height: 100vh;
@@ -21,11 +22,11 @@
 }
 
 .left{
-	background-color: rgba(243, 243, 243, 0.05);
 	backdrop-filter: blur(10px);
 	padding: 1rem 3rem;
 	border-radius: 10px;
 	border: 1px solid white;
+	mix-blend-mode: difference;
 }
 
 textarea{
@@ -39,6 +40,11 @@ textarea{
 
 textarea:focus{
 	border: 1px solid skyblue;
+}
+
+#errorMsg{
+	color: red;
+	margin-bottom: 10px;
 }
 
 button{
@@ -61,14 +67,15 @@ button:hover{
 
 .right {
 	width: 50%;
-	background-color: rgba(243, 243, 243, 0.05);
 	backdrop-filter: blur(10px);
 	padding: 1rem 3rem;
 	border-radius: 10px;
+	max-height: 90%;
 	border: 1px solid white;
+	overflow: scroll;
 }
 
-#posts div{
+#todos div{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -82,6 +89,30 @@ button:hover{
 	.right, .left{
 		width: 90%;
 	}
+	textarea{
+		width: 90%;
+	}
+}
+@media screen and (max-width:1200px) {
+	.right, .left{
+		width: 90%;
+	}
+	textarea{
+		width: 90%;
+	}
+}
+
+@media screen and (max-width:1600px) {
+	.main{
+		flex-direction: column;
+		justify-content: start;
+		padding: 1rem 0;
+		gap: 1rem;
+	}
+	.right, .left{
+		width: 90%;
+	}
+
 	textarea{
 		width: 90%;
 	}
