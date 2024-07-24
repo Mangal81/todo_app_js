@@ -3,7 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	color: white;
+	/* color: white; */
 }
 .container{
 	height: 100vh;
@@ -26,10 +26,10 @@
 	padding: 1rem 3rem;
 	border-radius: 10px;
 	border: 1px solid white;
-	mix-blend-mode: difference;
+	/* mix-blend-mode: difference; */
 }
 
-textarea{
+input{
 	background-color: transparent;
 	border: 1px solid white;
 	padding: 1rem;
@@ -38,7 +38,7 @@ textarea{
 	border-radius: 10px;
 }
 
-textarea:focus{
+input:focus{
 	border: 1px solid skyblue;
 }
 
@@ -75,6 +75,8 @@ button:hover{
 	overflow: scroll;
 }
 
+.right { overflow: -moz-scrollbars-none; }
+
 #todos div{
 	display: flex;
 	justify-content: space-between;
@@ -89,7 +91,7 @@ button:hover{
 	.right, .left{
 		width: 90%;
 	}
-	textarea{
+	input{
 		width: 90%;
 	}
 }
@@ -97,7 +99,7 @@ button:hover{
 	.right, .left{
 		width: 90%;
 	}
-	textarea{
+	input{
 		width: 90%;
 	}
 }
@@ -113,7 +115,7 @@ button:hover{
 		width: 90%;
 	}
 
-	textarea{
+	input{
 		width: 90%;
 	}
 }
