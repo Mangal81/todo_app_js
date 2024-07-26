@@ -6,22 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="/Images/favicon1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Images/favicon1.png" type="image/x-icon">
 </head>
 
 <body>
     <div class="container">
         <div class="main">
             <div class="left">
-                <form id="form">
+                <form id="form" autocomplete="off">
                     <h2>Create Your Todo</h2>
+                    <input type="text" hidden class="id" />
                     <br>
                     <input type="text" id="title" placeholder="Type todo name">
                     <br><br>
                     <input type="text" id="description" placeholder="Type todo description">
                     <br><br>
                     <div id="errorMsg"></div>
-                    <button type="submit" >Submit</button>
+                    <button type="submit" id="submit">Submit</button>
+                    <button type="submit" onclick="updateData()" id="update">Update</button>
                 </form>
             </div>
             <div class="right">
